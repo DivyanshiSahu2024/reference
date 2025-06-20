@@ -456,6 +456,26 @@ switch (month) {
 System.out.println("Result " + str);
 ```
 
+### Modern Switch Statement and yield keyword
+```java
+//yield sends the value back from the multi-line block.
+int month=2;
+String str= switch(month){
+ case 1 -> "January";
+ case 2 -> {
+             System.out.println("Only 28 days in a year");
+             yield "February";
+ }
+ case 3 -> "March";
+ default -> "Invalid Month"; 
+};
+System.out.println(str);
+//Output: Only 28 days in a year
+//        February
+
+```
+                                 
+
 ### Ternary operator
 
 ```java
